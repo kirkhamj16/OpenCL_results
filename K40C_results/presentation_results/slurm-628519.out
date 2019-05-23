@@ -1,0 +1,24 @@
+GOT PLATFORM 0x10ffc30Using Device: Tesla K40c
+Driver Version: 410.48
+using chip config: Tesla K40c
+parsing config for test: MP
+Kernel file: ../../../tests/MP/kernel.cl, Kernel Include path: /home/jak4/iws19/OpenCLLitmus/tests
+FLAGS: -I/home/jak4/iws19/OpenCLLitmus/tests -D X_Y_STRIDE=32 -D ID_SHUFFLE=1 -D BARRIER=1 -D MEM_STRESS=0 -D STRESS_ITERATIONS=512  -DNVIDIA 
+In file included from <kernel>:1:
+/home/jak4/iws19/OpenCLLitmus/tests/testing_common.h:3:30: error: unknown type name 'atomic_int'
+  void test_barrier(__global atomic_int *x) {
+                             ^
+/home/jak4/iws19/OpenCLLitmus/tests/testing_common.h:6:15: warning: implicit declaration of function 'atomic_fetch_add_explicit' is invalid in C99
+    int val = atomic_fetch_add_explicit(x, 1, memory_order_relaxed, memory_scope_device);
+              ^
+/home/jak4/iws19/OpenCLLitmus/tests/testing_common.h:8:13: warning: implicit declaration of function 'atomic_load_explicit' is invalid in C99
+      val = atomic_load_explicit(x, memory_order_relaxed, memory_scope_device);
+            ^
+<kernel>:4:12: error: unknown type name 'atomic_uint'
+  __global atomic_uint *ga /* global, atomic locations */,
+           ^
+<kernel>:30:7: warning: implicit declaration of function 'atomic_store_explicit' is invalid in C99
+      atomic_store_explicit(&ga[x_loc], 1, memory_order_relaxed, memory_scope_device);
+      ^
+
+/home/jak4/iws19/OpenCLLitmus/FirstGo/main.cpp:373: error (-11)

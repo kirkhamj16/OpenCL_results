@@ -1,0 +1,15 @@
+#!/bin/bash
+
+#SBATCH --nodes=1
+
+#BATCH --ntasks-per-node=1
+
+#SBATCH --gres=gpu:1
+
+#SBATCH --time=24:00:00
+
+#SBATCH --mail-user=jak4@princeton.edu
+
+cd /home/jak4/iws19/OpenCLLitmus/FirstGo/build/bin/
+
+./litmus_exe -D X_Y_STRIDE=32 -D ID_SHUFFLE=1 -D BARRIER=1 -D MEM_STRESS=1 -D STRESS_ITERATIONS=512 ../../../tests/MP

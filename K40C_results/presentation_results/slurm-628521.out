@@ -1,0 +1,22 @@
+GOT PLATFORM 0x237dc30Using Device: Tesla K40c
+Driver Version: 410.48
+using chip config: Tesla K40c
+parsing config for test: MP
+Kernel file: ../../../tests/MP/kernel.cl, Kernel Include path: /home/jak4/iws19/OpenCLLitmus/tests
+FLAGS: -I/home/jak4/iws19/OpenCLLitmus/tests -D X_Y_STRIDE=32 -D ID_SHUFFLE=1 -D BARRIER=1 -D MEM_STRESS=0 -D STRESS_ITERATIONS=512  -DNVIDIA 
+hist size: 5
+
+RESULTS: 
+-------------------
+r1 = 0 && r2 = 0  : 8549
+r1 = 1 && r2 = 1  : 1233
+r1 = 0 && r2 = 1  : 218
+*r1 = 1 && r2 = 0 : 0
+errors: 0
+
+RATES
+-------------------
+tests          : 10000
+time (seconds) : 9.05995
+tests/sec      : 1103.76
+

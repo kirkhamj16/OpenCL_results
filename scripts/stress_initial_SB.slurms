@@ -1,0 +1,20 @@
+#!/bin/bash
+
+#SBATCH --nodes=1
+
+#BATCH --ntasks-per-node=1
+
+#SBATCH --gres=gpu:1
+
+#SBATCH --time=24:00:00
+
+#SBATCH --mail-type=begin
+
+#SBATCH --mail-type=end
+
+#SBATCH --mail-user=jak4@princeton.edu
+
+cd /home/jak4/iws19/OpenCLLitmus/FirstGo/build/bin/
+
+./litmus_exe ../../../tests/SB
+

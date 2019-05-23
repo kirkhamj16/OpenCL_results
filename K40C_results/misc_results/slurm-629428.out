@@ -1,0 +1,101 @@
+Thu Apr 25 12:39:30 EDT 2019
+MP, ST LD
+Using Device: Tesla K40c
+Driver Version: 410.48
+using chip config: Tesla K40c
+FLAGS: -D X_Y_STRIDE=32 -D PRE_STRESS=1 -D PRE_STRESS_ITERATIONS=256 -D PRE_STRESS_PATTERN=2 -D ID_SHUFFLE=1 -D BARRIER=1 -D MEM_STRESS=1 -D STRESS_ITERATIONS=512  -DNVIDIA 
+
+RESULTS: 
+-------------------
+r1 = 0 && r2 = 0  : 509
+r1 = 1 && r2 = 1  : 474
+r1 = 0 && r2 = 1  : 17
+*r1 = 1 && r2 = 0 : 0
+errors: 0
+
+RATES
+-------------------
+tests          : 1000
+time (seconds) : 22.5516
+tests/sec      : 44.3428
+
+MP, ST ST
+Using Device: Tesla K40c
+Driver Version: 410.48
+using chip config: Tesla K40c
+FLAGS: -D X_Y_STRIDE=32 -D PRE_STRESS=1 -D PRE_STRESS_ITERATIONS=256 -D PRE_STRESS_PATTERN=1 -D STRESS_PATTERN=0 -D ID_SHUFFLE=1 -D BARRIER=1 -D MEM_STRESS=1 -D STRESS_ITERATIONS=512  -DNVIDIA 
+
+RESULTS: 
+-------------------
+r1 = 0 && r2 = 0  : 496
+r1 = 1 && r2 = 1  : 452
+r1 = 0 && r2 = 1  : 51
+*r1 = 1 && r2 = 0 : 1
+errors: 0
+
+RATES
+-------------------
+tests          : 1000
+time (seconds) : 2.29389
+tests/sec      : 435.941
+
+MP, LD LD
+Using Device: Tesla K40c
+Driver Version: 410.48
+using chip config: Tesla K40c
+FLAGS: -D X_Y_STRIDE=32 -D PRE_STRESS=1 -D PRE_STRESS_ITERATIONS=256 -D PRE_STRESS_PATTERN=3 -D STRESS_PATTERN=1 -D ID_SHUFFLE=1 -D BARRIER=1 -D MEM_STRESS=1 -D STRESS_ITERATIONS=512  -DNVIDIA 
+
+RESULTS: 
+-------------------
+r1 = 0 && r2 = 0  : 473
+r1 = 1 && r2 = 1  : 505
+r1 = 0 && r2 = 1  : 21
+*r1 = 1 && r2 = 0 : 1
+errors: 0
+
+RATES
+-------------------
+tests          : 1000
+time (seconds) : 4.60482
+tests/sec      : 217.164
+
+MP, LD ST
+Using Device: Tesla K40c
+Driver Version: 410.48
+using chip config: Tesla K40c
+FLAGS: -D X_Y_STRIDE=32 -D STRESS_PATTERN=2 -D ID_SHUFFLE=1 -D BARRIER=1 -D MEM_STRESS=1 -D STRESS_ITERATIONS=512  -DNVIDIA 
+<kernel>:34:1: warning: '__forceinline' attribute ignored
+__forceinline void atomic_store_explicit(__global volatile atomic_int* target, int val, const memory_order mo, const memory_scope ms) {
+^
+<kernel>:42:1: warning: '__forceinline' attribute ignored
+__forceinline int atomic_load_explicit(__global volatile atomic_int* target, const memory_order mo, const memory_scope ms) {
+^
+<kernel>:141:9: error: use of undeclared identifier 'PRE_STRESS_PATTERN'
+        switch(PRE_STRESS_PATTERN){
+               ^
+<kernel>:184:39: warning: passing '__global atomic_uint *' (aka 'volatile __global unsigned int *') to parameter of type 'volatile __global atomic_int *' (aka 'volatile __global int *') converts between pointers to integer types with different sign
+      int tmp1 = atomic_load_explicit(&ga[y_loc], memory_order_relaxed, memory_scope_device);
+                                      ^~~~~~~~~~
+<kernel>:42:70: note: passing argument to parameter 'target' here
+__forceinline int atomic_load_explicit(__global volatile atomic_int* target, const memory_order mo, const memory_scope ms) {
+                                                                     ^
+<kernel>:185:39: warning: passing '__global atomic_uint *' (aka 'volatile __global unsigned int *') to parameter of type 'volatile __global atomic_int *' (aka 'volatile __global int *') converts between pointers to integer types with different sign
+      int tmp2 = atomic_load_explicit(&ga[x_loc], memory_order_relaxed, memory_scope_device);
+                                      ^~~~~~~~~~
+<kernel>:42:70: note: passing argument to parameter 'target' here
+__forceinline int atomic_load_explicit(__global volatile atomic_int* target, const memory_order mo, const memory_scope ms) {
+                                                                     ^
+<kernel>:192:29: warning: passing '__global atomic_uint *' (aka 'volatile __global unsigned int *') to parameter of type 'volatile __global atomic_int *' (aka 'volatile __global int *') converts between pointers to integer types with different sign
+      atomic_store_explicit(&ga[x_loc], 1, memory_order_relaxed, memory_scope_device);
+                            ^~~~~~~~~~
+<kernel>:34:72: note: passing argument to parameter 'target' here
+__forceinline void atomic_store_explicit(__global volatile atomic_int* target, int val, const memory_order mo, const memory_scope ms) {
+                                                                       ^
+<kernel>:193:29: warning: passing '__global atomic_uint *' (aka 'volatile __global unsigned int *') to parameter of type 'volatile __global atomic_int *' (aka 'volatile __global int *') converts between pointers to integer types with different sign
+      atomic_store_explicit(&ga[y_loc], 1, memory_order_relaxed, memory_scope_device);
+                            ^~~~~~~~~~
+<kernel>:34:72: note: passing argument to parameter 'target' here
+__forceinline void atomic_store_explicit(__global volatile atomic_int* target, int val, const memory_order mo, const memory_scope ms) {
+                                                                       ^
+
+/home/jak4/iws19/OpenCLLitmus_v_2/litmus_driver.cpp:333: error (-11)

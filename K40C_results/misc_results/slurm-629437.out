@@ -1,0 +1,81 @@
+Thu Apr 25 12:53:58 EDT 2019
+SB ST LD
+Using Device: Tesla K40c
+Driver Version: 410.48
+using chip config: Tesla K40c
+FLAGS: -D X_Y_STRIDE=7 -D PRE_STRESS=1 -D PRE_STRESS_ITERATIONS=50 -D PRE_STRESS_PATTERN=2 -D STRESS_PATTERN=3 -D ID_SHUFFLE=1 -D BARRIER=1 -D MEM_STRESS=1 -D STRESS_ITERATIONS=1024  -DNVIDIA 
+
+RESULTS: 
+-------------------
+r1 = 1 && r2 = 1  : 516
+r1 = 1 && r2 = 0  : 423
+r1 = 0 && r2 = 1  : 61
+*r1 = 0 && r2 = 0 : 0
+errors: 0
+
+RATES
+-------------------
+tests          : 1000
+time (seconds) : 43.5577
+tests/sec      : 22.958
+
+SB ST ST
+Using Device: Tesla K40c
+Driver Version: 410.48
+using chip config: Tesla K40c
+FLAGS: -D X_Y_STRIDE=7 -D PRE_STRESS=1 -D PRE_STRESS_ITERATIONS=50 -D PRE_STRESS_PATTERN=1 -D STRESS_PATTERN=0 -D ID_SHUFFLE=1 -D BARRIER=1 -D MEM_STRESS=1 -D STRESS_ITERATIONS=1024  -DNVIDIA 
+
+RESULTS: 
+-------------------
+r1 = 1 && r2 = 1  : 509
+r1 = 1 && r2 = 0  : 426
+r1 = 0 && r2 = 1  : 65
+*r1 = 0 && r2 = 0 : 0
+errors: 0
+
+RATES
+-------------------
+tests          : 1000
+time (seconds) : 3.33972
+tests/sec      : 299.427
+
+SB LD LD
+Using Device: Tesla K40c
+Driver Version: 410.48
+using chip config: Tesla K40c
+FLAGS: -D X_Y_STRIDE=7 -D PRE_STRESS=1 -D PRE_STRESS_ITERATIONS=50 -D PRE_STRESS_PATTERN=0 -D STRESS_PATTERN=1 -D ID_SHUFFLE=1 -D BARRIER=1 -D MEM_STRESS=1 -D STRESS_ITERATIONS=1024  -DNVIDIA 
+
+RESULTS: 
+-------------------
+r1 = 1 && r2 = 1  : 367
+r1 = 1 && r2 = 0  : 303
+r1 = 0 && r2 = 1  : 330
+*r1 = 0 && r2 = 0 : 0
+errors: 0
+
+RATES
+-------------------
+tests          : 1000
+time (seconds) : 8.05846
+tests/sec      : 124.093
+
+SB LD ST
+Using Device: Tesla K40c
+Driver Version: 410.48
+using chip config: Tesla K40c
+FLAGS: -D X_Y_STRIDE=7 -D PRE_STRESS=1 -D PRE_STRESS_ITERATIONS=50 -D PRE_STRESS_PATTERN=3 -D STRESS_PATTERN=2 -D ID_SHUFFLE=1 -D BARRIER=1 -D MEM_STRESS=1 -D STRESS_ITERATIONS=1024  -DNVIDIA 
+
+RESULTS: 
+-------------------
+r1 = 1 && r2 = 1  : 522
+r1 = 1 && r2 = 0  : 427
+r1 = 0 && r2 = 1  : 51
+*r1 = 0 && r2 = 0 : 0
+errors: 0
+
+RATES
+-------------------
+tests          : 1000
+time (seconds) : 43.5532
+tests/sec      : 22.9604
+

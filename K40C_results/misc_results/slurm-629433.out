@@ -1,0 +1,81 @@
+Thu Apr 25 12:41:46 EDT 2019
+MP, ST LD
+Using Device: Tesla K40c
+Driver Version: 410.48
+using chip config: Tesla K40c
+FLAGS: -D X_Y_STRIDE=32 -D PRE_STRESS=1 -D PRE_STRESS_ITERATIONS=256 -D PRE_STRESS_PATTERN=2 -D ID_SHUFFLE=1 -D BARRIER=1 -D MEM_STRESS=1 -D STRESS_ITERATIONS=512  -DNVIDIA 
+
+RESULTS: 
+-------------------
+r1 = 0 && r2 = 0  : 506
+r1 = 1 && r2 = 1  : 470
+r1 = 0 && r2 = 1  : 23
+*r1 = 1 && r2 = 0 : 1
+errors: 0
+
+RATES
+-------------------
+tests          : 1000
+time (seconds) : 22.5407
+tests/sec      : 44.3642
+
+MP, ST ST
+Using Device: Tesla K40c
+Driver Version: 410.48
+using chip config: Tesla K40c
+FLAGS: -D X_Y_STRIDE=32 -D PRE_STRESS=1 -D PRE_STRESS_ITERATIONS=256 -D PRE_STRESS_PATTERN=1 -D STRESS_PATTERN=0 -D ID_SHUFFLE=1 -D BARRIER=1 -D MEM_STRESS=1 -D STRESS_ITERATIONS=512  -DNVIDIA 
+
+RESULTS: 
+-------------------
+r1 = 0 && r2 = 0  : 501
+r1 = 1 && r2 = 1  : 445
+r1 = 0 && r2 = 1  : 54
+*r1 = 1 && r2 = 0 : 0
+errors: 0
+
+RATES
+-------------------
+tests          : 1000
+time (seconds) : 2.29311
+tests/sec      : 436.089
+
+MP, LD LD
+Using Device: Tesla K40c
+Driver Version: 410.48
+using chip config: Tesla K40c
+FLAGS: -D X_Y_STRIDE=32 -D PRE_STRESS=1 -D PRE_STRESS_ITERATIONS=256 -D PRE_STRESS_PATTERN=3 -D STRESS_PATTERN=1 -D ID_SHUFFLE=1 -D BARRIER=1 -D MEM_STRESS=1 -D STRESS_ITERATIONS=512  -DNVIDIA 
+
+RESULTS: 
+-------------------
+r1 = 0 && r2 = 0  : 493
+r1 = 1 && r2 = 1  : 483
+r1 = 0 && r2 = 1  : 22
+*r1 = 1 && r2 = 0 : 2
+errors: 0
+
+RATES
+-------------------
+tests          : 1000
+time (seconds) : 4.6136
+tests/sec      : 216.75
+
+MP, LD ST
+Using Device: Tesla K40c
+Driver Version: 410.48
+using chip config: Tesla K40c
+FLAGS: -D X_Y_STRIDE=32 -D STRESS_PATTERN=2 -D ID_SHUFFLE=1 -D BARRIER=1 -D MEM_STRESS=1 -D STRESS_ITERATIONS=512  -DNVIDIA 
+
+RESULTS: 
+-------------------
+r1 = 0 && r2 = 0  : 478
+r1 = 1 && r2 = 1  : 416
+r1 = 0 && r2 = 1  : 101
+*r1 = 1 && r2 = 0 : 5
+errors: 0
+
+RATES
+-------------------
+tests          : 1000
+time (seconds) : 22.4087
+tests/sec      : 44.6255
+

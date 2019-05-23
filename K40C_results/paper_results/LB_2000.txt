@@ -1,0 +1,81 @@
+Sun May 5 18:51:54 EDT 2019
+LB ST LD
+Using Device: Tesla K40c
+Driver Version: 410.48
+using chip config: Tesla K40c
+FLAGS: -D X_Y_STRIDE=32 -D ID_SHUFFLE=1 -D BARRIER=1 -D MEM_STRESS=1 -D STRESS_ITERATIONS=512  -DNVIDIA 
+
+RESULTS: 
+-------------------
+r1 = 0 && r2 = 0  : 275
+r1 = 1 && r2 = 0  : 777
+r1 = 0 && r2 = 1  : 945
+*r1 = 1 && r2 = 1 : 3
+errors: 0
+
+RATES
+-------------------
+tests          : 2000
+time (seconds) : 44.9781
+tests/sec      : 44.4661
+
+LB ST ST
+Using Device: Tesla K40c
+Driver Version: 410.48
+using chip config: Tesla K40c
+FLAGS: -D X_Y_STRIDE=32 -D STRESS_PATTERN=0 -D ID_SHUFFLE=1 -D BARRIER=1 -D MEM_STRESS=1 -D STRESS_ITERATIONS=512  -DNVIDIA 
+
+RESULTS: 
+-------------------
+r1 = 0 && r2 = 0  : 120
+r1 = 1 && r2 = 0  : 388
+r1 = 0 && r2 = 1  : 490
+*r1 = 1 && r2 = 1 : 2
+errors: 0
+
+RATES
+-------------------
+tests          : 1000
+time (seconds) : 2.11773
+tests/sec      : 472.204
+
+LB LD LD
+Using Device: Tesla K40c
+Driver Version: 410.48
+using chip config: Tesla K40c
+FLAGS: -D X_Y_STRIDE=32 -D STRESS_PATTERN=1 -D ID_SHUFFLE=1 -D BARRIER=1 -D MEM_STRESS=1 -D STRESS_ITERATIONS=512  -DNVIDIA 
+
+RESULTS: 
+-------------------
+r1 = 0 && r2 = 0  : 30
+r1 = 1 && r2 = 0  : 407
+r1 = 0 && r2 = 1  : 560
+*r1 = 1 && r2 = 1 : 3
+errors: 0
+
+RATES
+-------------------
+tests          : 1000
+time (seconds) : 4.5119
+tests/sec      : 221.636
+
+LB LD ST
+Using Device: Tesla K40c
+Driver Version: 410.48
+using chip config: Tesla K40c
+FLAGS: -D X_Y_STRIDE=32 -D STRESS_PATTERN=2 -D ID_SHUFFLE=1 -D BARRIER=1 -D MEM_STRESS=1 -D STRESS_ITERATIONS=512  -DNVIDIA 
+
+RESULTS: 
+-------------------
+r1 = 0 && r2 = 0  : 159
+r1 = 1 && r2 = 0  : 356
+r1 = 0 && r2 = 1  : 482
+*r1 = 1 && r2 = 1 : 3
+errors: 0
+
+RATES
+-------------------
+tests          : 1000
+time (seconds) : 22.4277
+tests/sec      : 44.5877
+
