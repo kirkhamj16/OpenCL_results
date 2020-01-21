@@ -1,1 +1,2 @@
 fuzzing/nuc-i7_overnight_RESULTS.csv filter=lfs diff=lfs merge=lfs -text
+*.csv filter=lfs diff=lfs merge=lfs -text
